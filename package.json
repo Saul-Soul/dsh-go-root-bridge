@@ -1,0 +1,66 @@
+{
+  "name": "dsh-go-root-bridge",
+  "version": "1.0.0",
+  "description": "Root bridge panel for dsh-go: kernel-level su escalation status, full-disk file access bridge (requires KernelSU-granted uid). Root 桥接面板：内核提权状态 + 全盘文件桥。",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "keywords": [
+    "dsh",
+    "dsh-go",
+    "root",
+    "kernelsu",
+    "bridge",
+    "panel"
+  ],
+  "files": [
+    "lib/",
+    "daemon/",
+    "probes.py",
+    "icon.png",
+    "README.md",
+    "LICENSE",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "dshGo": {
+    "v": 1,
+    "title": {
+      "zh": "Root 桥接",
+      "en": "Root Bridge"
+    },
+    "icon": "power",
+    "contributes": {
+      "panels": [
+        {
+          "id": "perms",
+          "title": {
+            "zh": "权限状态",
+            "en": "Permissions"
+          },
+          "icon": "power",
+          "placement": [
+            "session.tab",
+            "features"
+          ]
+        }
+      ]
+    }
+  },
+  "author": "Koshca (https://github.com/saul-soul)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saul-soul/dsh-go-root-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saul-soul/dsh-go-root-bridge/issues"
+  }
+}
